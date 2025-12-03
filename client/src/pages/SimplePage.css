@@ -14,4 +14,42 @@
   line-height: 1.7;
 }
 
+.about-section {
+  margin-bottom: 1.75rem;
+}
+
+.about-section h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.about-section p + p {
+  margin-top: 0.5rem;
+}
+
+.cv-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.3rem;
+  border-radius: 999px;
+  border: 1px solid rgba(249, 115, 22, 0.8);
+  background: linear-gradient(to right, #f97316, #facc15);
+  color: #111827;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.cv-link:hover {
+  filter: brightness(1.05);
+}
+
+/* Light theme overrides */
+
+:root[data-theme='light'] .simple-page p {
+  color: #4b5563;
+}
+
 
