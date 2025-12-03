@@ -46,6 +46,18 @@ app.get("/api/projects", async (req, res) => {
   }
 });
 
+app.get('/api/blogs', async (req, res) => {
+  try {
+    const [rows] = await pool.query(
+      'SELECT id, title, excerpt, readMoreUrl, createdAt FROM blogs ORDER BY createdAt DESC'
+    )
+    res.json(rows)
+  } catch (err) {
+    console.error('Error fetching blogs', err)
+    res.status(500).json({ error: 'Failed to fetch blogs' })
+  }
+})
+
 app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
 });
