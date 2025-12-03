@@ -1,8 +1,18 @@
+import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './Layout.css'
 
 function Layout({ children }) {
   const location = useLocation()
+  const [theme, setTheme] = useState('dark')
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
+  }
 
   return (
     <div className="app-root">
@@ -13,6 +23,9 @@ function Layout({ children }) {
           </Link>
         </div>
         <nav className="nav-right">
+          <button type="button" className="theme-toggle" onClick={toggleTheme}>
+            {theme === 'dark' ? 'Light' : 'Dark'} mode
+          </button>
           <Link
             to="/about"
             className={
