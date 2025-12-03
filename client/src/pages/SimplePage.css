@@ -1,0 +1,17 @@
+.simple-page {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.simple-page h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.simple-page p {
+  color: #d1d5db;
+  line-height: 1.7;
+}
+
+

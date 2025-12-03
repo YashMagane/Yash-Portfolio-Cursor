@@ -1,0 +1,128 @@
+.app-root {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #111827, #020617);
+  color: #e5e7eb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 5vw;
+  backdrop-filter: blur(16px);
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 23, 42, 0.9),
+    rgba(15, 23, 42, 0.6)
+  );
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.nav-left {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.nav-logo {
+  color: #e5e7eb;
+  text-decoration: none;
+}
+
+.nav-logo:hover {
+  color: #f97316;
+}
+
+.nav-right {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.nav-link {
+  color: #9ca3af;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 0.1rem;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #f97316, #facc15);
+  transition: width 0.2s ease-out;
+}
+
+.nav-link:hover {
+  color: #e5e7eb;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.main-content {
+  padding: 2.5rem 5vw 4rem;
+}
+
+.footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.3);
+  padding: 1.5rem 5vw 2rem;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  background: radial-gradient(circle at bottom right, #020617, #020617);
+}
+
+.footer-inner {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.footer-name {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.footer-contact {
+  margin: 0.1rem 0;
+}
+
+.footer a {
+  color: #e5e7eb;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #f97316;
+}
+
+@media (max-width: 640px) {
+  .nav {
+    padding-inline: 1.25rem;
+  }
+
+  .nav-right {
+    gap: 1rem;
+  }
+
+  .main-content {
+    padding: 1.75rem 1.25rem 3rem;
+  }
+
+  .footer {
+    padding-inline: 1.25rem;
+  }
+}
+
+
